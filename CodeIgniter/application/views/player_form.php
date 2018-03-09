@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="<?php echo base_url();?>" />
+
+
+<!-- Mirrored from kodeforest.net/html/gameplay/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Jul 2017 13:39:07 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>EPL 2k18</title>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!-- DL Menu CSS -->
+    <link href="assets/js/dl-menu/component.css" rel="stylesheet">
+    <!-- Slick Slider CSS -->
+    <link href="assets/css/slick.css" rel="stylesheet"/>
+    <link href="assets/css/slick-theme.css" rel="stylesheet"/>
+    <!-- ICONS CSS -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/css/svg-icons.css" rel="stylesheet">
+    <!-- Pretty Photo CSS -->
+    <link href="assets/css/prettyPhoto.css" rel="stylesheet">
+    <!-- Typography CSS -->
+    <link href="assets/css/typography.css" rel="stylesheet">
+    <!-- Widget CSS -->
+    <link href="assets/css/widget.css" rel="stylesheet">
+    <!-- Shortcodes CSS -->
+    <link href="assets/css/shortcodes.css" rel="stylesheet">
+    <!-- Custom Main StyleSheet CSS -->
+    <link href="assets/style.css" rel="stylesheet">
+    <!-- Color CSS -->
+    <link href="assets/css/color.css" rel="stylesheet">
+    <!-- Responsive CSS -->
+    <link href="assets/css/responsive.css" rel="stylesheet">
+ 
+ <style type="text/css">
+     
+ </style>
+  </head>
+
+  <body style="color: black;margin-left: 10px;">
+
+
+    <?php foreach ($players_admin as $player) {
+        echo $player->NAME; echo '--';echo $player->ID;?>
+        <br>
+    <?php    } ?>
+
+  PLAYER FORM FOR EACH GAME
+
+    <?php echo form_open('main/player_form_123558484'); ?>
+
+    game_id : <?php echo form_input('game_id'); ?><br>
+    team_id : <?php echo form_input('team_id'); ?><br>
+    player_id : <?php echo form_input('player_id'); ?><br>
+    start (1 if player was in lineup) : <?php 
+           $options = array(
+                    '1'         => '1',
+                    '0'           => '0'
+            );
+            echo form_dropdown('start', $options, '1');
+    ?><br>
+    minutes : <?php echo form_input('minutes'); ?><br>
+    goals : <?php echo form_input('goals'); ?><br>
+    assists : <?php echo form_input('assists'); ?><br>
+    shots : <?php echo form_input('shots'); ?><br>
+    ontarget : <?php echo form_input('ontarget'); ?><br>
+    fouls : <?php echo form_input('fouls'); ?><br>
+    yellow card : <?php echo form_input('yellow'); ?><br>
+    red card : <?php echo form_input('red'); ?><br>
+    offsides : <?php echo form_input('offsides'); ?><br>
+ 
+
+
+
+    <?php echo form_submit(array('id' => 'submit', 'value' => 'Submit')); ?>
+    <?php echo form_close(); ?>
+
+
+    <a href='<?php echo site_url('main/admin') ?>'>admin</a><br>
+    <a href='<?php echo site_url('main/match_form_123558484') ?>'>match form</a><br>
+
+    <a href='<?php echo site_url('main/log_out') ?>'>Log Out</a>
+
+
+
+
+
+      <!--Jquery Library-->
+    <script src="assets/js/jquery.js"></script>
+    <!--Bootstrap core JavaScript-->
+    <script src="assets/js/bootstrap.js"></script>
+    <!--Slick Slider JavaScript-->
+    <script src="assets/js/slick.min.js"></script>
+    <!--Number Count (Waypoints) JavaScript-->
+    <script src="assets/js/downCount.js"></script>
+    <script src="assets/js/waypoints-min.js"></script>
+    <!--Dl Menu Script-->
+    <script src="assets/js/dl-menu/modernizr.custom.js"></script>
+    <script src="assets/js/dl-menu/jquery.dlmenu.js"></script>
+    <!--Progress bar JavaScript-->
+    <script src="assets/js/jprogress.js" type="text/javascript"></script>
+    <!--Pretty Photo JavaScript-->
+    <script src="assets/js/jquery.prettyPhoto.js"></script>
+    <!--Custom JavaScript-->
+    <script src="assets/js/custom.js"></script>
+
+  </body>
+
+<!-- Mirrored from kodeforest.net/html/gameplay/latest-result.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Jul 2017 13:43:21 GMT -->
+</html>
